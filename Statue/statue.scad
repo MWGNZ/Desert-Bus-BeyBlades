@@ -196,7 +196,7 @@ module statue() {
 	}
 }
 
-module plinth(){
+module plinth() {
 	translate([0,0,-8])
 		cylinder(8,29,29);
 
@@ -224,5 +224,13 @@ module plinth(){
 	}
 }
 
-statue();
-plinth();
+module statue_and_plinth() {
+	rotate([0,0,90]) {
+		translate([0,0,70]) {
+			statue();
+			plinth();
+		}
+	}
+}
+
+statue_and_plinth();
